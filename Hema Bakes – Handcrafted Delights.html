@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hema Bakes – Handcrafted Delights</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7f3;--bg2:#ffe4ee;--ink:#7a1a4f;--text:#5a2a43;--pink:#e0008c;--plum:#8e2468;--soft:#ffb3d6;--card:#ffffff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1020;--bg2:#3d1630;--ink:#ffc2e0;--text:#f3d3e2;--pink:#ff6bbd;--plum:#ff9fd2;--soft:#8a2a62;--card:#3a1730}}
+:root[data-theme="dark"]{--bg:#2a1020;--bg2:#3d1630;--ink:#ffc2e0;--text:#f3d3e2;--pink:#ff6bbd;--plum:#ff9fd2;--soft:#8a2a62;--card:#3a1730}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);font-family:'Quicksand',system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);font-weight:600;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:'Cormorant Garamond',serif;font-size:1.4rem;letter-spacing:.12em;color:var(--pink)}
+nav div a{margin-left:20px;text-decoration:none;font-weight:600;font-size:.95rem}
+nav div a:hover{color:var(--pink)}
+.hero{position:relative;text-align:center;padding:56px 0 90px;background:radial-gradient(ellipse at 50% 0,var(--bg2),var(--bg) 70%);overflow:hidden}
+.blob{position:absolute;border-radius:50%;background:linear-gradient(135deg,#ff6fc0,#ffb8dc);opacity:.85;z-index:0}
+.b1{width:420px;height:420px;top:-210px;right:-120px}
+.b2{width:300px;height:300px;bottom:-150px;left:-100px}
+.hero .wrap{position:relative;z-index:1}
+.hero img{width:min(360px,70vw);height:auto}
+.hero h1{font-size:clamp(2.6rem,8vw,4.6rem);letter-spacing:.1em;margin-top:6px}
+.hero h1 span{color:var(--plum)}
+.tag{font-family:'Cormorant Garamond',serif;font-size:1.35rem;letter-spacing:.2em;color:var(--plum);display:flex;align-items:center;justify-content:center;gap:14px;margin:8px 0 22px}
+.tag:before,.tag:after{content:"";width:50px;height:1px;background:var(--plum)}
+.hero p{max-width:480px;margin:0 auto 26px}
+.btn{display:inline-block;padding:13px 28px;border-radius:999px;background:var(--pink);color:#fff;text-decoration:none;font-weight:600;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--pink);margin-left:10px}
+section{padding:78px 0}
+section h2{font-size:clamp(2rem,5vw,2.8rem);margin-bottom:10px}
+.lead{max-width:560px;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--card);border-radius:26px;padding:26px;box-shadow:0 10px 30px -14px var(--pink)}
+.card .ic{font-size:2.2rem;display:block;margin-bottom:8px}
+.card h3{font-size:1.5rem;margin-bottom:6px}
+.card small{display:block;margin-top:10px;color:var(--pink);font-weight:600}
+.alt-bg{background:var(--bg2)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about .quote{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--plum);line-height:1.3;border-left:4px solid var(--pink);padding-left:20px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;counter-reset:s}
+.steps div{counter-increment:s;padding-top:14px;border-top:3px solid var(--pink)}
+.steps div:before{content:counter(s);font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--pink)}
+.steps h3{font-size:1.35rem}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.contact a{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:20px;background:var(--card);text-decoration:none;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.contact a:hover{box-shadow:0 8px 22px -10px var(--pink)}
+.contact i{font-style:normal;width:42px;height:42px;flex:none;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.2rem}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;align-items:start}
+.mcard{background:var(--card);border-radius:26px;padding:0 0 18px;overflow:hidden;box-shadow:0 10px 30px -14px var(--pink)}
+.mcard h3{background:var(--plum);color:#fff;font-size:1.6rem;padding:14px 24px;border-left:8px solid var(--pink);letter-spacing:.04em}
+.mcard h3 em{font-size:1rem;font-style:normal;opacity:.85;margin-left:6px}
+.mcard ul{list-style:none;padding:8px 24px 0}
+.mcard li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed var(--soft)}
+.mcard li:last-child{border:0}
+.mcard li b{color:var(--ink);white-space:nowrap}
+.mcard small{display:block;font-size:.75rem;opacity:.75;line-height:1.3}
+.fine{margin-top:22px;font-size:.9rem}
+footer{text-align:center;padding:34px 20px 40px;font-size:.9rem}
+@media(max-width:720px){.about{grid-template-columns:1fr}nav div a:nth-child(n+3){display:none}.btn.alt{margin:10px 0 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>HB</b><div><a href="#menu">Menu</a><a href="#about">About</a><a href="#order">How to order</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="hero">
+<span class="blob b1"></span><span class="blob b2"></span>
+<div class="wrap">
+<img alt="Hema Bakes HB logo with cupcake" src="data:image/png;base64,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">
+<h1>HEMA <span>BAKES</span></h1>
+<div class="tag">Handcrafted Delights</div>
+<p>Cakes, cupcakes and sweet treats baked by hand, in small batches, for the moments worth celebrating.</p>
+<a class="btn" href="#contact">Order now</a><a class="btn alt" href="#menu">See our menu</a>
+</div>
+</header>
+
+<section id="menu"><div class="wrap">
+<h2>Our menu</h2>
+<p class="lead">Baked fresh and made to order. Call or message us to place your order.</p>
+<div class="menu">
+<div class="mcard"><h3>Brownies <em>¼ kg</em></h3><ul><li><span>Classic Fudgy</span><b>₹220</b></li><li><span>Mixed Nuts</span><b>₹250</b></li><li><span>Double Chocolate</span><b>₹280</b></li><li><span>Triple Chocolate</span><b>₹290</b></li><li><span>Nutella</span><b>₹300</b></li><li><span>Assorted Brownies</span><b>₹340</b></li><li><span>Birthday Brownie Slab<small>Additional charges may apply for customization</small></span><b>₹320</b></li><li><span>Premium Brownies<small>Fillings, frostings and toppings</small></span><b>₹390</b></li></ul></div>
+<div class="mcard"><h3>Cakes <em>½ kg</em></h3><ul><li><span>Black Forest</span><b>₹400</b></li><li><span>White Forest</span><b>₹400</b></li><li><span>Black Currant</span><b>₹430</b></li><li><span>Pineapple</span><b>₹430</b></li><li><span>Choco Truffle</span><b>₹490</b></li></ul></div>
+<div class="mcard"><h3>HB Delights ★</h3><ul><li><span>Mini Brownie</span><b>₹20</b></li><li><span>Cupcake</span><b>₹35</b></li><li><span>Tres Leches Cake</span><b>₹70</b></li><li><span>Jar Cake</span><b>₹80</b></li></ul></div>
+</div>
+<p class="fine">FSSAI Lic. No: 22426017000065</p>
+</div></section>
+
+<section id="about" class="alt-bg"><div class="wrap about">
+<div><h2>Baked by hand, with care</h2>
+<p>Hema Bakes was started by Prasath Prakash with a simple idea: every cake and cookie should taste like it was made for you, because it was. We bake in small batches, use quality ingredients and finish each piece by hand.</p>
+<p style="margin-top:12px">We are FSSAI registered (licence no. 22426017000065).</p></div>
+<div class="quote">Handcrafted delights, one batch at a time.</div>
+</div></section>
+
+<section id="order"><div class="wrap">
+<h2>How to order</h2>
+<p class="lead">Ordering takes a few minutes.</p>
+<div class="steps">
+<div><h3>Message us</h3><p>Call or DM on Instagram with your date, flavour and quantity.</p></div>
+<div><h3>Confirm the details</h3><p>We share the design, price and pickup or delivery options.</p></div>
+<div><h3>We bake</h3><p>Your order is baked fresh just before your date.</p></div>
+<div><h3>Enjoy</h3><p>Pick it up or get it delivered, ready to celebrate.</p></div>
+</div>
+</div></section>
+
+<section id="contact" class="alt-bg"><div class="wrap">
+<h2>Get in touch</h2>
+<p class="lead">Tell us what you're celebrating and we'll take it from there.</p>
+<div class="contact">
+<a href="tel:+919976037636"><i style="background:#27ae60">✆</i>+91 99760 37636</a>
+<a href="https://www.instagram.com/hb.hemabakes" rel="noopener"><i style="background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4)">◎</i>@hb.hemabakes</a>
+<a href="https://www.hemabakes.com" rel="noopener"><i style="background:#1a73e8">🌐</i>www.hemabakes.com</a>
+</div>
+</div></section>
+
+<footer>© 2026 Hema Bakes · FSSAI 22426017000065</footer>
+</body>
+</html>
